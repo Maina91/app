@@ -22,7 +22,7 @@ class User extends Authenticatable
         'email' =>'required',
         'password' =>'required',
         'gender' =>'required',
-        
+        'country' =>'required',
     ];
 
     /**

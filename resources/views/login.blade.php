@@ -67,6 +67,8 @@
         <input type="password" name="password" placeholder="Enter your password" required>
 
         <input type="submit" value="Login">
+        <a href="{{ route('user.create') }}">Register</a>
+
     </form>
 </body>
 </html>
