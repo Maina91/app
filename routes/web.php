@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
-
 use App\Http\Controllers\CountryController;
+
 use App\Models\User;
 use App\Models\Country;
 use Illuminate\Support\Facades\Auth;
@@ -28,9 +29,11 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('user.logout');
 Route::get('/create', [UserController::class, 'create'])->name('user.create');
 Route::post('/create', [UserController::class, 'save'])->name('user.save');
 
+// Route::get('/create', 'CountryController@selectCountries');
 
-Route::get('dropdown', [CountryController::class, 'selectCountries'])->name('countries.dropdown');
+Route::get('{country}/create', [CountryController::class, 'selectCountries'])->name('countries.dropdown');
 
+// Route::get('dropdown', [CountryController::class, '']);
 
 Route::get('/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
 

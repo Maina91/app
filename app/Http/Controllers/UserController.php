@@ -19,6 +19,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'password'  =>  'required|min:8|confirmed',
             'gender' => 'required',
+            'country' => 'required'
 
         ]);
         $user=new User();
@@ -26,6 +27,8 @@ class UserController extends Controller
         $user->email=$validatedData['email'];
         $user->password = bcrypt($validatedData['password']);
         $user->gender=$validatedData['gender'];
+        $user->country=$validatedData['country'];
+
         $res = $user->save();
         if($res){
             return redirect()->route('login')->with('success', 'successfully registered.');

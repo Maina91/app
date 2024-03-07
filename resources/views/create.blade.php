@@ -101,19 +101,20 @@
 
         <label for="gender">Gender</label>
         <select class="select" id="gender" name="gender">
+            <option value="">-- Select Gender --</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">Other</option>
         </select>
 
       
-        <div class="form-group mb-3">
-            <label class="form-control-label" for="country">Country</label>
-            <select id="country-dropdown" class="form-control">
+        <div>
+            <label for="country">Country</label>
+            <select id="country" class="select" name="country">
                 <option value="">-- Select Country --</option>
-                @foreach ($countries as $country)
-                <option value="{{ $country->id }}">
-                    {{ $country->name }} 
+                 @foreach ($countries as $country)
+                 <option value="{{ $country->id }}"> 
+                     {{ $country->name }}  
                  </option>
             @endforeach
             

@@ -12,9 +12,10 @@ class CountryController extends Controller
 {
     public function selectCountries()
     {
-        
+       
         $countries = Country::all(); 
-        return view('create', ['countries' => $countries]);
+        dd($countries);
+        // return view('create', ['countries' => $countries]);
     }
 
    
